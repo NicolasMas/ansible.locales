@@ -1,0 +1,8 @@
+---
+  # Global switches
+  locales_enabled: yes
+
+  # Global yum instruction
+  yum_additional_packages:
+      - glibc-common
+#      - locales

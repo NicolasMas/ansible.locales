@@ -1,0 +1,9 @@
+---
+
+# application variables
+locale_locales:
+- 'en_US.UTF-8'
+
+locale_lang:  'LANG=en_US.utf8'
+# If we need to restart services after the change
+dependent_services: []

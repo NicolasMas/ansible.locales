@@ -1,0 +1,18 @@
+---
+
+# Contains the package set of instructions.
+
+# If we need specific packages from yum
+  - name: yum  |  install additional packages
+    yum: name={{item}}
+    with_items: yum_additional_packages
+
+#   DOES NOT WORK ON CENTOS
+#  - name:  locales | generate
+#    locale_gen: name={{item}} state=present
+#    with_items: locale_locales
+
+  - name: locales | set
+    sudo: yes
+    command: localectl set-locale {{ locale_lang }}
+    notify: restart dependent services
